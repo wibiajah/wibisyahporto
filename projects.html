@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Wibi Syah Aditya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #f59e0b;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-3: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+            --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 2rem;
+            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .projects-hero {
+            text-align: center;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .projects-hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .projects-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .projects-hero .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .projects-hero p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* Filter Tabs */
+        .filter-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .filter-tab {
+            padding: 12px 24px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .filter-tab:hover, .filter-tab.active {
+            background: var(--gradient);
+            border-color: transparent;
+            transform: translateY(-2px);
+        }
+
+        /* Stats Section */
+        .stats-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .stat-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .project {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 30px 60px rgba(99, 102, 241, 0.2);
+        }
+
+        .project-header {
+            padding: 2rem 2rem 0;
+            position: relative;
+        }
+
+        .project-number {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .project-description {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .tech-tag {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--accent);
+        }
+
+        .project-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 0 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            filter: brightness(0.8);
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+
+        .overlay-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .overlay-description {
+            font-size: 0.8rem;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 0 1rem;
+        }
+
+        .project-actions {
+            padding: 0 2rem 2rem;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .btn-primary {
+            background: var(--gradient);
+            color: var(--white);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 10px 25px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Project Features */
+        .project-features {
+            padding: 1rem 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .features-title {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .features-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 0.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .feature-item::before {
+            content: '✓';
+            color: var(--success);
+            font-weight: bold;
+        }
+
+        /* Modal for Image Gallery */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 2rem;
+            width: 90%;
+            max-width: 800px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .modal img {
+            width: 100%;
+            border-radius: 12px;
+        }
+
+        .modal-caption {
+            text-align: center;
+            margin-top: 1rem;
+            color: var(--white);
+        }
+
+        .close {
+            position: absolute;
+            top: 1rem;
+            right: 2rem;
+            font-size: 2rem;
+            font-weight: bold;
+            color: var(--white);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close:hover {
+            color: var(--primary);
+        }
+
+        /* Achievement Section */
+        .achievements-section {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            margin: 4rem 0;
+            text-align: center;
+        }
+
+        .achievements-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .achievements-description {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .achievement-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .achievement-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .achievement-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .achievement-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .achievement-description {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .projects-hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .stats-section {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .project-actions {
+                flex-direction: column;
+            }
+
+            .modal-content {
+                padding: 1rem;
+            }
+        }
+
+        /* Animation Classes */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">WS.</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="projects-hero">
+                <h1>My <span class="highlight">Projects</span></h1>
+                <p>Kumpulan proyek-proyek yang telah saya kerjakan menggunakan berbagai teknologi web modern</p>
+                
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">Semua Project</button>
+                    <button class="filter-tab" data-filter="web">Web Development</button>
+                    <button class="filter-tab" data-filter="system">Sistem Informasi</button>
+                    <button class="filter-tab" data-filter="frontend">Frontend</button>
+                </div>
+            </section>
+
+            <!-- Stats Section -->
+            <section class="stats-section fade-in">
+                <div class="stat-card">
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Projects Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5+</div>
+                    <div class="stat-label">Technologies Used</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+            </section>
+
+            <!-- Projects Grid -->
+            <section class="projects-grid">
+                <!-- Project 1: SIKD -->
+                <article class="project fade-in" data-category="web system">
+                    <div class="project-number">01</div>
+                    <div class="project-header">
+                        <h3 class="project-title">Sistem Informasi Kendaraan Dinas</h3>
+                        <p class="project-description">
+                            Sistem informasi berbasis web untuk mengelola peminjaman kendaraan dinas. 
+                            Aplikasi ini memungkinkan pegawai untuk melakukan reservasi kendaraan secara online, 
+                            melacak status kendaraan, dan mengelola proses pengembalian dengan efisien.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Bootstrap</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-gallery">
+                        <div class="gallery-item" onclick="openModal('assets/img/sikd/utama.png', 'Dashboard Utama', 'Menampilkan status umum kendaraan dinas secara real-time')">
+                            <img src="assets/img/sikd/utama.png" alt="Dashboard Utama">
+                            <div class="gallery-overlay">
+                                <div class="overlay-title">Dashboard Utama</div>
+                                <div class="overlay-description">Menampilkan status umum kendaraan dinas secara real-time</div>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openModal('assets/img/sikd/dataken.png', 'Data Kendaraan', 'List kendaraan lengkap dengan detail merk, plat, dan kondisi')">
+                            <img src="assets/img/sikd/dataken.png" alt="Data Kendaraan">
+                            <div class="gallery-overlay">
+                                <div class="overlay-title">Data Kendaraan</div>
+                                <div class="overlay-description">List kendaraan lengkap dengan detail merk, plat, dan kondisi</div>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openModal('assets/img/sikd/formpinjam.png', 'Form Peminjaman', 'Fitur untuk mengajukan peminjaman kendaraan dinas secara online')">
+                            <img src="assets/img/sikd/formpinjam.png" alt="Form Peminjaman">
+                            <div class="gallery-overlay">
+                                <div class="overlay-title">Form Peminjaman</div>
+                                <div class="overlay-description">Fitur untuk mengajukan peminjaman kendaraan dinas secara online</div>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openModal('assets/img/sikd/kembali.png', 'Form Pengembalian', 'Digunakan untuk mengonfirmasi pengembalian kendaraan setelah pemakaian')">
+                            <img src="assets/img/sikd/kembali.png" alt="Form Pengembalian">
+                            <div class="gallery-overlay">
+                                <div class="overlay-title">Form Pengembalian</div>
+                                <div class="overlay-description">Digunakan untuk mengonfirmasi pengembalian kendaraan setelah pemakaian</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-features">
+                        <div class="features-title">Fitur Utama:</div>
+                        <div class="features-list">
+                            <div class="feature-item">Dashboard real-time</div>
+                            <div class="feature-item">Manajemen kendaraan</div>
+                            <div class="feature-item">Sistem peminjaman online</div>
+                            <div class="feature-item">Tracking status kendaraan</div>
+                            <div class="feature-item">Laporan dan analytics</div>
+                            <div class="feature-item">User management</div>
+                        </div>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            View Code
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                            </svg>
+                            Live Demo
+                        </a>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Achievements Section -->
+            <section class="achievements-section fade-in">
+                <h2 class="achievements-title">Pencapaian & <span class="highlight">Pengakuan</span></h2>
+                <p class="achievements-description">
+                    Berbagai pencapaian dan pengakuan yang telah saya raih dalam perjalanan pengembangan diri di bidang teknologi
+                </p>
+                
+                <div class="achievements-grid">
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🎓</div>
+                        <h4 class="achievement-title">IPK 3.22</h4>
+                        <p class="achievement-description">Prestasi akademik yang konsisten di STMIK Mardira Indonesia</p>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon">💼</div>
+                        <h4 class="achievement-title">Magang PLN</h4>
+                        <p class="achievement-description">Pengalaman praktis di PT. PLN dalam bidang sistem kelistrikan</p>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon">🚀</div>
+                        <h4 class="achievement-title">3+ Projects</h4>
+                        <p class="achievement-description">Telah menyelesaikan berbagai proyek sistem informasi</p>
+                    </div>
+                    
+                    <div class="achievement-card">
+                        <div class="achievement-icon">⚡</div>
+                        <h4 class="achievement-title">Fast Learner</h4>
+                        <p class="achievement-description">Kemampuan adaptasi dan pembelajaran yang cepat terhadap teknologi baru</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Call to Action -->
+            <section class="cta-section fade-in">
+                <h3>Tertarik untuk Berkolaborasi?</h3>
+                <p>
+                    Saya selalu terbuka untuk proyek-proyek menarik dan kesempatan kerja sama baru. 
+                    Mari diskusikan bagaimana saya dapat membantu mewujudkan ide Anda menjadi kenyataan!
+                </p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                    <a href="contact.html" class="btn btn-primary">
+                        Mulai Proyek Baru
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </a>
+                    <a href="skills.html" class="btn btn-secondary">
+                        Lihat Skills Saya
+                        <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M13,9H11V7H13M13,17H11V11H13M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div id="modalCaption" class="modal-caption"></div>
+        </div>
+    </div>
+
+    <script>
+        // Filter functionality
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const projects = document.querySelectorAll('.project');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs
+                filterTabs.forEach(t => t.classList.remove('active'));
+                // Add active class to clicked tab
+                tab.classList.add('active');
+
+                const filter = tab.getAttribute('data-filter');
+                
+                projects.forEach(project => {
+                    if (filter === 'all') {
+                        project.style.display = 'block';
+                        setTimeout(() => {
+                            project.style.opacity = '1';
+                            project.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        const categories = project.getAttribute('data-category').split(' ');
+                        if (categories.includes(filter)) {
+                            project.style.display = 'block';
+                            setTimeout(() => {
+                                project.style.opacity = '1';
+                                project.style.transform = 'translateY(0)';
+                            }, 100);
+                        } else {
+                            project.style.opacity = '0';
+                            project.style.transform = 'translateY(30px)';
+                            setTimeout(() => {
+                                project.style.display = 'none';
+                            }, 300);
+                        }
+                    }
+                });
+            });
+        });
+
+        // Modal functionality
+        function openModal(src, title, description) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            const modalCaption = document.getElementById('modalCaption');
+            
+            modal.style.display = 'block';
+            modalImg.src = src;
+            modalCaption.innerHTML = `<h3>${title}</h3><p>${description}</p>`;
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('imageModal');
+            modal.style.display = 'none';
+        }
+
+        // Close modal when clicking outside of it
+        window.addEventListener('click', (event) => {
+            const modal = document.getElementById('imageModal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to elements
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+
+        // Animate numbers in stats
+        function animateNumbers() {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent.replace(/\D/g, ''));
+                const suffix = stat.textContent.replace(/\d/g, '');
+                let current = 0;
+                const increment = target / 20;
+                
+                const timer = setInterval(() => {
+                    current += increment;
+                    if (current >= target) {
+                        current = target;
+                        clearInterval(timer);
+                    }
+                    stat.textContent = Math.floor(current) + suffix;
+                }, 50);
+            });
+        }
+
+        // Start number animation when stats section is visible
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            const statsObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateNumbers();
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.5 });
+            
+            statsObserver.observe(statsSection);
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add parallax effect to project cards
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            const projects = document.querySelectorAll('.project');
+            
+            projects.forEach((project, index) => {
+                const rate = scrolled * -0.5;
+                project.style.transform = `translateY(${rate * 0.1 * (index + 1)}px)`;
+            });
+        });
+    </script>
+</body>
+</html>-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            View Code
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                            </svg>
+                            Live Demo
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 2: Web Jadwal Piket -->
+                <article class="project fade-in" data-category="web system">
+                    <div class="project-number">02</div>
+                    <div class="project-header">
+                        <h3 class="project-title">Web Jadwal Piket Guru SMK KP 2</h3>
+                        <p class="project-description">
+                            Aplikasi web untuk mengelola jadwal piket guru di SMK KP 2. Sistem ini memungkinkan 
+                            admin untuk mengelola jadwal piket, melacak kehadiran guru, dan menghasilkan laporan 
+                            kehadiran yang komprehensif.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">Chart.js</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-gallery">
+                        <div class="gallery-item" onclick="openModal('assets/img/kp2/utama.jpg', 'Dashboard Admin', 'Menampilkan data-data seperti jumlah user, statistik bulanan, dan navigasi')">
+                            <img src="assets/img/kp2/utama.jpg" alt="Dashboard Admin">
+                            <div class="gallery-overlay">
+                                <div class="overlay-title">Dashboard Admin</div>
+                                <div class="overlay-description">Menampilkan data-data seperti jumlah user, statistik bulanan, dan navigasi</div>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openModal('assets/img/kp2/guru.jpg', 'List Guru', 'List Guru SMK KP 2 yang lengkap beserta identitas nya')">
+                            <img src="assets/img/kp2/guru.jpg" alt="List Guru">
+                            <div class="gallery-overlay">
+                                <div class="overlay-title">List Guru</div>
+                                <div class="overlay-description">List Guru SMK KP 2 yang lengkap beserta identitas nya</div>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openModal('assets/img/kp2/gamasuk.jpg', 'Guru Tidak Masuk', 'Menampilkan info guru piket yang tidak masuk')">
+                            <img src="assets/img/kp2/gamasuk.jpg" alt="Guru Tidak Masuk">
+                            <div class="gallery-overlay">
+                                <div class="overlay-title">Guru Tidak Masuk</div>
+                                <div class="overlay-description">Menampilkan info guru piket yang tidak masuk</div>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openModal('assets/img/kp2/terlambat.jpg', 'Guru Terlambat', 'Menampilkan info guru piket yang datang terlambat')">
+                            <img src="assets/img/kp2/terlambat.jpg" alt="Guru Terlambat">
+                            <div class="gallery-overlay">
+                                <div class="overlay-title">Guru Terlambat</div>
+                                <div class="overlay-description">Menampilkan info guru piket yang datang terlambat</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-features">
+                        <div class="features-title">Fitur Utama:</div>
+                        <div class="features-list">
+                            <div class="feature-item">Manajemen jadwal piket</div>
+                            <div class="feature-item">Tracking kehadiran real-time</div>
+                            <div class="feature-item">Data guru lengkap</div>
+                            <div class="feature-item">Laporan keterlambatan</div>
+                            <div class="feature-item">Dashboard analytics</div>
+                            <div class="feature-item">Export data ke Excel</div>
+                        </div>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                            View Code
+                        </a>
+                        <a href="#" class="btn btn-secondary">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
+                            </svg>
+                            Live Demo
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Project 3: Sistem PBB -->
+                <article class="project fade-in" data-category="web system">
+                    <div class="project-number">03</div>
+                    <div class="project-header">
+                        <h3 class="project-title">Sistem Pengelolaan Berita Acara Pajak Bumi dan Bangunan</h3>
+                        <p class="project-description">
+                            Sistem informasi untuk mengelola berita acara pajak bumi dan bangunan (PBB). 
+                            Aplikasi ini membantu dalam pengelolaan data PBB, tracking pembayaran, 
+                            dan menghasilkan berita acara secara otomatis.
+                        </p>
+                        <div class="project-tech">
+                            <span class="tech-tag">HTML</span>
+                            <span class="tech-tag">CSS</span>
+                            <span class="tech-tag">JavaScript</span>
+                            <span class="tech-tag">PHP</span>
+                            <span class="tech-tag">MySQL</span>
+                            <span class="tech-tag">PDF Generator</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-gallery">
+                        <div class="gallery-item" onclick="openModal('assets/img/bapen/utaama.png', 'Menu Utama', 'Tampilan utama informasi total pbb, status dan statistik pembayaran')">
+                            <img src="assets/img/bapen/utaama.png" alt="Menu Utama">
+                            <div class="gallery-overlay">
+                                <div class="overlay-title">Menu Utama</div>
+                                <div class="overlay-description">Tampilan utama informasi total pbb, status dan statistik pembayaran</div>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openModal('assets/img/bapen/pbb.png', 'Data PBB', 'List data pajak bumi bangunan lengkap beserta status, lokasi dan informasi lainnya')">
+                            <img src="assets/img/bapen/pbb.png" alt="Data PBB">
+                            <div class="gallery-overlay">
+                                <div class="overlay-title">Data PBB</div>
+                                <div class="overlay-description">List data pajak bumi bangunan lengkap beserta status, lokasi dan informasi lainnya</div>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openModal('assets/img/bapen/hutang.png', 'Data Hutang', 'Informasi nominal hutang wajib pajak dan jatuh tempo, serta status pembayaran')">
+                            <img src="assets/img/bapen/hutang.png" alt="Data Hutang">
+                            <div class="gallery-overlay">
+                                <div class="overlay-title">Data Hutang</div>
+                                <div class="overlay-description">Informasi nominal hutang wajib pajak dan jatuh tempo, serta status pembayaran</div>
+                            </div>
+                        </div>
+                        <div class="gallery-item" onclick="openModal('assets/img/bapen/arsip.png', 'Arsip Berita Acara', 'Informasi Arsip Berita Acara yang sudah di cetak pdf atau di print oleh user')">
+                            <img src="assets/img/bapen/arsip.png" alt="Arsip Berita Acara">
+                            <div class="gallery-overlay">
+                                <div class="overlay-title">Arsip Berita Acara</div>
+                                <div class="overlay-description">Informasi Arsip Berita Acara yang sudah di cetak pdf atau di print oleh user</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-features">
+                        <div class="features-title">Fitur Utama:</div>
+                        <div class="features-list">
+                            <div class="feature-item">Manajemen data PBB</div>
+                            <div class="feature-item">Tracking pembayaran pajak</div>
+                            <div class="feature-item">Generate berita acara PDF</div>
+                            <div class="feature-item">Sistem arsip digital</div>
+                            <div class="feature-item">Laporan hutang pajak</div>
+                            <div class="feature-item">Dashboard statistik</div>
+                        </div>
+                    </div>
+
+                    <div class="project-actions">
+                        <a href="#" class="btn btn-primary">
+                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333

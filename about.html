@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Wibi Syah Aditya</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #f59e0b;
+            --accent: #06b6d4;
+            --dark: #0f172a;
+            --dark-light: #1e293b;
+            --gray: #64748b;
+            --light: #f8fafc;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-2: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Navigation (same as home) */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            padding: 1rem 2rem;
+            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.95);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-decoration: none;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary);
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after, .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 80px;
+            padding: 4rem 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .about-hero {
+            text-align: center;
+            margin-bottom: 6rem;
+            position: relative;
+        }
+
+        .about-hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .about-hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .about-hero .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .about-hero p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* About Content */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 4rem;
+            margin-bottom: 6rem;
+            align-items: start;
+        }
+
+        .profile-section {
+            position: sticky;
+            top: 100px;
+        }
+
+        .profile-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .profile-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .profile-card .role {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .status {
+            background: var(--gradient-2);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+        }
+
+        .quick-facts {
+            text-align: left;
+        }
+
+        .fact-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .fact-label {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .bio-section {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .bio-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .bio-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.1);
+        }
+
+        .bio-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 16px 16px 0 0;
+        }
+
+        .bio-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bio-card .icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .bio-card p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 1rem;
+        }
+
+        .bio-card ul {
+            list-style: none;
+        }
+
+        .bio-card li {
+            padding: 0.5rem 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .bio-card li::before {
+            content: '✓';
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /* Education & Experience Timeline */
+        .timeline-section {
+            margin: 6rem 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .section-title .highlight {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--gradient);
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            position: relative;
+            margin: 3rem 0;
+            width: 50%;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            padding-left: 2rem;
+        }
+
+        .timeline-item:nth-child(odd) {
+            padding-right: 2rem;
+            text-align: right;
+        }
+
+        .timeline-content {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 1.5rem;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-content:hover {
+            transform: scale(1.05);
+            border-color: var(--primary);
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 20px;
+            height: 20px;
+            background: var(--gradient);
+            border-radius: 50%;
+            transform: translateY(-50%);
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(odd)::before {
+            right: -10px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: -10px;
+        }
+
+        .timeline-date {
+            background: var(--gradient);
+            color: var(--white);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-subtitle {
+            color: var(--gray);
+            margin-bottom: 1rem;
+        }
+
+        .timeline-description {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        .timeline-description ul {
+            list-style: none;
+            margin-top: 0.5rem;
+        }
+
+        .timeline-description li {
+            padding: 0.2rem 0;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        .timeline-description li::before {
+            content: '•';
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+
+        /* Values Section */
+        .values-section {
+            margin: 6rem 0;
+            text-align: center;
+        }
+
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .value-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .value-card:hover::before {
+            left: 100%;
+        }
+
+        .value-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(99, 102, 241, 0.2);
+        }
+
+        .value-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-size: 1.5rem;
+        }
+
+        .value-card h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .value-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.9rem;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .cta-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            color: var(--gray);
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 12px 24px;
+            background: var(--gradient);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 968px) {
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .profile-section {
+                position: static;
+            }
+
+            .timeline::before {
+                left: 20px;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0 !important;
+                padding-left: 3rem !important;
+                padding-right: 0 !important;
+                text-align: left !important;
+            }
+
+            .timeline-item::before {
+                left: 10px !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .about-hero h1 {
+                font-size: 2rem;
+            }
+
+            .nav-menu {
+                display: none;
+            }
+
+            .timeline-item {
+                padding-left: 2rem !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">WS.</a>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link active">About</a></li>
+                <li><a href="projects.html" class="nav-link">Projects</a></li>
+                <li><a href="skills.html" class="nav-link">Skills</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Hero Section -->
+            <section class="about-hero">
+                <h1>Tentang <span class="highlight">Saya</span></h1>
+                <p>Mengenal lebih dalam tentang perjalanan, passion, dan visi saya dalam dunia teknologi</p>
+            </section>
+
+            <!-- About Content -->
+            <section class="about-content">
+                <div class="profile-section">
+                    <div class="profile-card">
+                        <img src="assets/img/me.jpg" alt="Wibi Syah Aditya" class="profile-img">
+                        <h3>Wibi Syah Aditya</h3>
+                        <p class="role">Web Developer & Student</p>
+                        <div class="status">🚀 Available for Work</div>
+                        
+                        <div class="quick-facts">
+                            <div class="fact-item">
+                                <span class="fact-label">Lokasi:</span>
+                                <span>Bandung, ID</span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-label">Umur:</span>
+                                <span>22 tahun</span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-label">Status:</span>
+                                <span>Mahasiswa Aktif</span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-label">IPK:</span>
+                                <span>3.22</span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-label">Email:</span>
+                                <span>wibisyahaditya@gmail.com</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bio-section">
+                    <div class="bio-card">
+                        <h3>
+                            <div class="icon">👨‍💻</div>
+                            Background Saya
+                        </h3>
+                        <p>
+                            Saya adalah mahasiswa Teknik Informatika semester 4 di STMIK Mardira Indonesia dengan IPK 3.22. 
+                            Berlatar belakang pendidikan SMK Teknik Elektronika Industri, saya memiliki pemahaman yang kuat 
+                            tentang sistem kelistrikan dan komponen elektronika.
+                        </p>
+                        <p>
+                            Passion saya terletak pada pengembangan web dan teknologi IoT. Saya selalu antusias mempelajari 
+                            teknologi baru dan mengaplikasikannya dalam proyek-proyek nyata.
+                        </p>
+                    </div>
+
+                    <div class="bio-card">
+                        <h3>
+                            <div class="icon">🎯</div>
+                            Keahlian & Kemampuan
+                        </h3>
+                        <ul>
+                            <li>Pengembangan Web (HTML, CSS, JavaScript, PHP)</li>
+                            <li>Database Management (MySQL)</li>
+                            <li>Sistem Kelistrikan & Elektronika</li>
+                            <li>Microsoft Office Suite (Word, Excel, PowerPoint)</li>
+                            <li>Adobe Photoshop (Basic)</li>
+                            <li>Internet of Things (IoT)</li>
+                            <li>Analisis Data</li>
+                        </ul>
+                    </div>
+
+                    <div class="bio-card">
+                        <h3>
+                            <div class="icon">⚡</div>
+                            Kepribadian
+                        </h3>
+                        <p>
+                            Saya memiliki kepribadian yang adaptif dan mampu belajar dengan cepat. 
+                            Dapat bekerja dengan baik baik secara individu maupun dalam tim, serta 
+                            mampu bekerja di bawah tekanan untuk mencapai deadline yang ditentukan.
+                        </p>
+                        <ul>
+                            <li>Adaptif dan Fleksibel</li>
+                            <li>Pembelajaran Cepat (Fast Learner)</li>
+                            <li>Bekerja Baik dalam Tim</li>
+                            <li>Tahan Terhadap Tekanan</li>
+                            <li>Detail-Oriented</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Timeline Section -->
+            <section class="timeline-section">
+                <div class="section-title">
+                    <h2>Perjalanan <span class="highlight">Saya</span></h2>
+                    <p>Riwayat pendidikan dan pengalaman yang telah saya lalui</p>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2022 - Sekarang</div>
+                            <h4 class="timeline-title">STMIK Mardira Indonesia</h4>
+                            <p class="timeline-subtitle">Teknik Informatika - Semester 4</p>
+                            <div class="timeline-description">
+                                <p>IPK: 3.22</p>
+                                <ul>
+                                    <li>Mempelajari pengembangan web dan aplikasi</li>
+                                    <li>Memahami konsep Internet of Things (IoT)</li>
+                                    <li>Belajar analisis data dan database</li>
+                                    <li>Mengerjakan berbagai proyek sistem informasi</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2019 - 2020</div>
+                            <h4 class="timeline-title">Magang - PT. PLN (Persero)</h4>
+                            <p class="timeline-subtitle">Teknik Elektronika Industri</p>
+                            <div class="timeline-description">
+                                <ul>
+                                    <li>Mengoperasikan peralatan dan sistem kelistrikan</li>
+                                    <li>Input dan checking data menggunakan Excel</li>
+                                    <li>Memelihara dan mengecek suhu peralatan</li>
+                                    <li>Penanganan kerusakan peralatan listrik</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-content">
+                            <div class="timeline-date">2018 - 2021</div>
+                            <h4 class="timeline-title">SMKN 1 Katapang</h4>
+                            <p class="timeline-subtitle">Teknik Elektronika Industri</p>
+                            <div class="timeline-description">
+                                <p>Nilai: 8.34</p>
+                                <ul>
+                                    <li>Mempelajari komponen elektronika</li>
+                                    <li>Sistem kelistrikan dan rangkaian listrik</li>
+                                    <li>Keselamatan kerja (K3)</li>
+                                    <li>Proyek pengembangan diri</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Values Section -->
+            <section class="values-section">
+                <div class="section-title">
+                    <h2>Nilai & <span class="highlight">Prinsip</span></h2>
+                    <p>Nilai-nilai yang saya pegang dalam bekerja dan berkarya</p>
+                </div>
+
+                <div class="values-grid">
+                    <div class="value-card">
+                        <div class="value-icon">🎯</div>
+                        <h4>Fokus pada Kualitas</h4>
+                        <p>Setiap proyek yang saya kerjakan selalu mengutamakan kualitas dan kepuasan pengguna sebagai prioritas utama.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">🚀</div>
+                        <h4>Inovasi Berkelanjutan</h4>
+                        <p>Selalu mencari cara baru dan teknologi terdepan untuk memberikan solusi yang lebih baik dan efisien.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">🤝</div>
+                        <h4>Kolaborasi Tim</h4>
+                        <p>Percaya bahwa kerja tim yang solid adalah kunci kesuksesan dalam menghadapi tantangan proyek apapun.</p>
+                    </div>
+
+                    <div class="value-card">
+                        <div class="value-icon">📚</div>
+                        <h4>Pembelajaran Kontinu</h4>
+                        <p>Dunia teknologi terus berkembang, sehingga saya berkomitmen untuk terus belajar dan mengikuti perkembangan terbaru.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <h3>Mari Berkolaborasi!</h3>
+                <p>
+                    Saya terbuka untuk peluang kerja sama, proyek freelance, atau diskusi tentang teknologi. 
+                    Jangan ragu untuk menghubungi saya jika Anda memiliki proyek menarik atau ingin berkolaborasi.
+                </p>
+                <a href="contact.html" class="btn">
+                    Hubungi Saya
+                    <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                    </svg>
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to cards
+        document.querySelectorAll('.bio-card, .timeline-item, .value-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(card);
+        });
+
+        // Timeline items alternating animation delay
+        document.querySelectorAll('.timeline-item').forEach((item, index) => {
+            item.style.transitionDelay = `${index * 0.2}s`;
+        });
+    </script>
+</body>
+</html>
