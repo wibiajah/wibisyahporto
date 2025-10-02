@@ -703,56 +703,313 @@
                         </div>
                     </div>
 
-                    <div class="project-actions">
-                        <a href="#" class="btn btn-primary">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                            View Code
-                        </a>
-                        <a href="#" class="btn btn-secondary">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
-                            </svg>
-                            Live Demo
-                        </a>
-                    </div>
+                  
                 </article>
+
+                <br>
+                <article class="project fade-in" data-category="web system">
+    <div class="project-number">02</div>
+    <div class="project-header">
+        <h3 class="project-title">Sistem Informasi Presensi Karyawan Berbasis QR Code</h3>
+        <p class="project-description">
+            Sistem informasi berbasis web untuk mengelola presensi karyawan menggunakan teknologi QR Code. 
+            Aplikasi ini memungkinkan karyawan melakukan absensi secara digital melalui pemindaian QR Code, 
+            pencatatan kehadiran real-time, deteksi keterlambatan otomatis, dan rekapitulasi data yang terintegrasi 
+            untuk mendukung transparansi dan efisiensi manajemen sumber daya manusia di Pabrik Baso Semar.
+        </p>
+        <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Bootstrap</span>
+            <span class="tech-tag">QR Code</span>
+        </div>
+    </div>
+    
+    <div class="project-gallery">
+        <div class="gallery-item" onclick="openModal('assets/img/qrcode/qrsaya.png', 'Dashboard Utama', 'Menampilkan data presensi karyawan secara real-time dengan statistik kehadiran')">
+            <img src="assets/img/qrcode/qrsaya.png" alt="Dashboard Utama">
+            <div class="gallery-overlay">
+                <div class="overlay-title">QR Saya</div>
+                <div class="overlay-description">Menampilkan data absensi QR Karyawan secara realtime, sesuai dengan identitas karyawan tersebut</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/qrcode/datakaryawan.png', 'Data Karyawan', 'Daftar karyawan lengkap dengan informasi personal dan status kehadiran')">
+            <img src="assets/img/qrcode/datakaryawan.png" alt="Data Karyawan">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Data Karyawan</div>
+                <div class="overlay-description">Daftar karyawan lengkap dengan informasi personal dan status kehadiran</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/qrcode/scanqr.PNG', 'Scan QR Code', 'Fitur pemindaian QR Code untuk absensi masuk dan keluar karyawan')">
+            <img src="assets/img/qrcode/scanqr.PNG" alt="Scan QR Code">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Scan QR Code</div>
+                <div class="overlay-description">Fitur pemindaian QR Code untuk absensi masuk dan keluar karyawan</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/qrcode/absen.png', 'Laporan Presensi', 'Rekapitulasi data kehadiran, keterlambatan, dan laporan bulanan')">
+            <img src="assets/img/qrcode/absen.png" alt="Laporan Presensi">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Laporan Presensi</div>
+                <div class="overlay-description">Rekapitulasi data kehadiran, keterlambatan, dan laporan bulanan</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-features">
+        <div class="features-title">Fitur Utama:</div>
+        <div class="features-list">
+            <div class="feature-item">Absensi QR Code</div>
+            <div class="feature-item">Dashboard real-time</div>
+            <div class="feature-item">Deteksi keterlambatan otomatis</div>
+            <div class="feature-item">Manajemen data karyawan</div>
+            <div class="feature-item">Laporan kehadiran bulanan</div>
+            <div class="feature-item">Integrasi penghitungan gaji</div>
+        </div>
+    </div>
+</article>
+
+
+<br>
+<article class="project fade-in" data-category="web system">
+    <div class="project-number">03</div>
+    <div class="project-header">
+        <h3 class="project-title">Sistem Informasi Manajemen Stok Sembako Berbasis Web</h3>
+        <p class="project-description">
+            Sistem informasi berbasis web untuk mengelola stok sembako di Toko Rama Berkah. 
+            Aplikasi ini memungkinkan pencatatan barang masuk dan keluar secara otomatis, 
+            pemantauan stok secara real-time, pengecekan ketersediaan barang, dan pembuatan laporan 
+            persediaan yang akurat untuk meningkatkan efisiensi operasional dan meminimalisir 
+            kesalahan pencatatan manual.
+        </p>
+        <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Bootstrap</span>
+        </div>
+    </div>
+    
+    <div class="project-gallery">
+        <div class="gallery-item" onclick="openModal('assets/img/sembako/dashbor.png', 'Dashboard Utama', 'Menampilkan statistik stok sembako dan ringkasan operasional toko secara real-time')">
+            <img src="assets/img/sembako/dashbor.png" alt="Dashboard Utama">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Dashboard Utama</div>
+                <div class="overlay-description">Menampilkan statistik stok sembako dan ringkasan operasional toko secara real-time</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/sembako/barang.png', 'Data Barang', 'Daftar barang sembako lengkap dengan kategori, jumlah stok, dan status ketersediaan')">
+            <img src="assets/img/sembako/barang.png" alt="Data Barang">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Data Barang</div>
+                <div class="overlay-description">Daftar barang sembako lengkap dengan kategori, jumlah stok, dan status ketersediaan</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/sembako/stokmasuk.png', 'Transaksi Stok', 'Fitur untuk mencatat barang masuk dan keluar secara otomatis dan terstruktur')">
+            <img src="assets/img/sembako/stokmasuk.png" alt="Transaksi Stok">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Transaksi Stok</div>
+                <div class="overlay-description">Fitur untuk mencatat barang masuk dan keluar secara otomatis dan terstruktur</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/sembako/histori.png', 'Laporan Stok', 'Rekapitulasi dan analisis persediaan barang untuk mendukung pengambilan keputusan')">
+            <img src="assets/img/sembako/histori.png" alt="Laporan Stok">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Laporan Stok</div>
+                <div class="overlay-description">Rekapitulasi dan analisis persediaan barang untuk mendukung pengambilan keputusan</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-features">
+        <div class="features-title">Fitur Utama:</div>
+        <div class="features-list">
+            <div class="feature-item">Dashboard real-time</div>
+            <div class="feature-item">Manajemen data barang</div>
+            <div class="feature-item">Pencatatan stok masuk/keluar</div>
+            <div class="feature-item">Monitoring stok otomatis</div>
+            <div class="feature-item">Laporan persediaan</div>
+            <div class="feature-item">Manajemen kategori sembako</div>
+        </div>
+    </div>
+</article>
+
+<br>
+<article class="project fade-in" data-category="web system">
+    <div class="project-number">04</div>
+    <div class="project-header">
+        <h3 class="project-title">Sistem Informasi Klinik Marchsya Berbasis Web</h3>
+        <p class="project-description">
+            Sistem informasi berbasis web untuk mengelola operasional pelayanan medis di Klinik Marchsya 
+            yang berada di bawah naungan PT. Sentosa Karya Aditama. Aplikasi ini memungkinkan pendaftaran 
+            pasien secara online, pemberian nomor rekam medis otomatis, pencatatan layanan medis 
+            (pemeriksaan umum, radiologi, laboratorium), serta pembuatan laporan dan surat keterangan sehat 
+            untuk meningkatkan efisiensi pelayanan dan akurasi manajemen data pasien.
+        </p>
+        <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Bootstrap</span>
+        </div>
+    </div>
+    
+    <div class="project-gallery">
+        <div class="gallery-item" onclick="openModal('assets/img/klinik/dasbor.png', 'Dashboard Utama', 'Menampilkan statistik kunjungan pasien dan layanan medis secara real-time')">
+            <img src="assets/img/klinik/dasbor.png" alt="Dashboard Utama">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Dashboard Utama</div>
+                <div class="overlay-description">Menampilkan statistik kunjungan pasien dan layanan medis secara real-time</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/klinik/pasien.png', 'Data Pasien', 'Daftar pasien lengkap dengan nomor rekam medis dan riwayat kunjungan')">
+            <img src="assets/img/klinik/pasien.png" alt="Data Pasien">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Data Pasien</div>
+                <div class="overlay-description">Daftar pasien lengkap dengan nomor rekam medis dan riwayat kunjungan</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/klinik/daftar.png', 'Pendaftaran Online', 'Fitur pendaftaran pasien secara online dengan pemilihan layanan dan jadwal kunjungan')">
+            <img src="assets/img/klinik/daftar.png" alt="Pendaftaran Online">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Pendaftaran Online</div>
+                <div class="overlay-description">Fitur pendaftaran pasien secara online dengan pemilihan layanan dan jadwal kunjungan</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/klinik/umum.png', 'Rekam Medis', 'Pencatatan hasil pemeriksaan medis dan riwayat kesehatan pasien')">
+            <img src="assets/img/klinik/umum.png" alt="Rekam Medis">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Pemeriksaan Umum</div>
+                <div class="overlay-description">Pencatatan hasil pemeriksaan umum dan riwayat kesehatan pasien</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/klinik/rad.png', 'Layanan Radiologi', 'Manajemen pemeriksaan radiologi dan dokumentasi hasil foto rontgen')">
+            <img src="assets/img/klinik/rad.png" alt="Layanan Radiologi">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Layanan Radiologi</div>
+                <div class="overlay-description">Manajemen pemeriksaan radiologi dan dokumentasi hasil foto rontgen</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/klinik/lab.png', 'Layanan Laboratorium', 'Pencatatan hasil pemeriksaan laboratorium dan medical check up')">
+            <img src="assets/img/klinik/lab.png" alt="Layanan Laboratorium">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Layanan Laboratorium</div>
+                <div class="overlay-description">Pencatatan hasil pemeriksaan laboratorium dan medical check up</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/klinik/sehat.png', 'Surat Keterangan Sehat', 'Pembuatan dan cetak surat keterangan sehat untuk calon PMI')">
+            <img src="assets/img/klinik/sehat.png" alt="Surat Keterangan Sehat">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Surat Keterangan Sehat</div>
+                <div class="overlay-description">Pembuatan dan cetak surat keterangan sehat untuk calon PMI</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/klinik/lap.png', 'Laporan Layanan', 'Rekapitulasi data layanan medis dan analisis kunjungan pasien')">
+            <img src="assets/img/klinik/lap.png" alt="Laporan Layanan">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Laporan Layanan</div>
+                <div class="overlay-description">Rekapitulasi data layanan medis dan analisis kunjungan pasien</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-features">
+        <div class="features-title">Fitur Utama:</div>
+        <div class="features-list">
+            <div class="feature-item">Pendaftaran online pasien</div>
+            <div class="feature-item">Nomor rekam medis otomatis</div>
+            <div class="feature-item">Manajemen layanan medis</div>
+            <div class="feature-item">Pemeriksaan radiologi & lab</div>
+            <div class="feature-item">Surat keterangan sehat</div>
+            <div class="feature-item">Laporan dan analisis data</div>
+        </div>
+    </div>
+</article>
+
+<br>
+<article class="project fade-in" data-category="web system">
+    <div class="project-number">05</div>
+    <div class="project-header">
+        <h3 class="project-title">Sistem Tiketing Dusun Strawberry Walini Berbasis Web</h3>
+        <p class="project-description">
+            Sistem informasi berbasis web untuk mengelola pembelian tiket masuk di Dusun Strawberry Walini. 
+            Aplikasi ini memungkinkan pengunjung membeli tiket secara online sebelum datang ke lokasi, 
+            validasi kode unik tiket masuk, pencatatan transaksi otomatis, serta pembuatan laporan penjualan 
+            secara real-time untuk meningkatkan efisiensi pelayanan dan mengurangi antrean panjang di lokasi wisata.
+        </p>
+        <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">Laravel</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Bootstrap</span>
+        </div>
+    </div>
+    
+    <div class="project-gallery">
+        <div class="gallery-item" onclick="openModal('assets/img/strober/dasbor.png', 'Dashboard Utama', 'Menampilkan statistik penjualan tiket dan jumlah pengunjung secara real-time')">
+            <img src="assets/img/strober/dasbor.png" alt="Dashboard Utama">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Dashboard Utama</div>
+                <div class="overlay-description">Menampilkan statistik penjualan tiket dan jumlah pengunjung secara real-time</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/strober/pesan.png', 'Data Transaksi', 'Daftar transaksi pembelian tiket lengkap dengan status pembayaran')">
+            <img src="assets/img/strober/pesan.png" alt="Data Transaksi">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Data Transaksi</div>
+                <div class="overlay-description">Daftar transaksi pembelian tiket lengkap dengan status pembayaran</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/strober/tikets.png', 'Pembelian Tiket Online', 'Fitur pemesanan tiket secara online dengan pilihan tanggal kunjungan')">
+            <img src="assets/img/strober/tikets.png" alt="Pembelian Tiket Online">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Pembelian Tiket Online</div>
+                <div class="overlay-description">Fitur pemesanan tiket secara online dengan pilihan tanggal kunjungan</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/strober/valid.png', 'Validasi Tiket', 'Sistem validasi kode unik tiket untuk verifikasi pengunjung di pintu masuk')">
+            <img src="assets/img/strober/valid.png" alt="Validasi Tiket">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Validasi Tiket</div>
+                <div class="overlay-description">Sistem validasi kode unik tiket untuk verifikasi pengunjung di pintu masuk</div>
+            </div>
+        </div>
+        
+        <div class="gallery-item" onclick="openModal('assets/img/strober/laporan.png', 'Laporan Penjualan', 'Rekapitulasi dan analisis data penjualan tiket harian, mingguan, dan bulanan')">
+            <img src="assets/img/strober/laporan.png" alt="Laporan Penjualan">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Laporan Penjualan</div>
+                <div class="overlay-description">Rekapitulasi dan analisis data penjualan tiket harian, mingguan, dan bulanan</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-features">
+        <div class="features-title">Fitur Utama:</div>
+        <div class="features-list">
+            <div class="feature-item">Pembelian tiket online</div>
+            <div class="feature-item">E-ticket dengan kode unik</div>
+            <div class="feature-item">Validasi tiket digital</div>
+            <div class="feature-item">Konfirmasi pembayaran transfer</div>
+            <div class="feature-item">Dashboard real-time</div>
+            <div class="feature-item">Laporan penjualan otomatis</div>
+        </div>
+    </div>
+</article>
             </section>
 
-            <!-- Achievements Section -->
-            <section class="achievements-section fade-in">
-                <h2 class="achievements-title">Pencapaian & <span class="highlight">Pengakuan</span></h2>
-                <p class="achievements-description">
-                    Berbagai pencapaian dan pengakuan yang telah saya raih dalam perjalanan pengembangan diri di bidang teknologi
-                </p>
-                
-                <div class="achievements-grid">
-                    <div class="achievement-card">
-                        <div class="achievement-icon">🎓</div>
-                        <h4 class="achievement-title">IPK 3.22</h4>
-                        <p class="achievement-description">Prestasi akademik yang konsisten di STMIK Mardira Indonesia</p>
-                    </div>
-                    
-                    <div class="achievement-card">
-                        <div class="achievement-icon">💼</div>
-                        <h4 class="achievement-title">Magang PLN</h4>
-                        <p class="achievement-description">Pengalaman praktis di PT. PLN dalam bidang sistem kelistrikan</p>
-                    </div>
-                    
-                    <div class="achievement-card">
-                        <div class="achievement-icon">🚀</div>
-                        <h4 class="achievement-title">3+ Projects</h4>
-                        <p class="achievement-description">Telah menyelesaikan berbagai proyek sistem informasi</p>
-                    </div>
-                    
-                    <div class="achievement-card">
-                        <div class="achievement-icon">⚡</div>
-                        <h4 class="achievement-title">Fast Learner</h4>
-                        <p class="achievement-description">Kemampuan adaptasi dan pembelajaran yang cepat terhadap teknologi baru</p>
-                    </div>
-                </div>
-            </section>
+            
 
             <!-- Call to Action -->
             <section class="cta-section fade-in">
@@ -934,162 +1191,4 @@
         });
     </script>
 </body>
-</html>-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                            View Code
-                        </a>
-                        <a href="#" class="btn btn-secondary">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
-                            </svg>
-                            Live Demo
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Project 2: Web Jadwal Piket -->
-                <article class="project fade-in" data-category="web system">
-                    <div class="project-number">02</div>
-                    <div class="project-header">
-                        <h3 class="project-title">Web Jadwal Piket Guru SMK KP 2</h3>
-                        <p class="project-description">
-                            Aplikasi web untuk mengelola jadwal piket guru di SMK KP 2. Sistem ini memungkinkan 
-                            admin untuk mengelola jadwal piket, melacak kehadiran guru, dan menghasilkan laporan 
-                            kehadiran yang komprehensif.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">Chart.js</span>
-                        </div>
-                    </div>
-                    
-                    <div class="project-gallery">
-                        <div class="gallery-item" onclick="openModal('assets/img/kp2/utama.jpg', 'Dashboard Admin', 'Menampilkan data-data seperti jumlah user, statistik bulanan, dan navigasi')">
-                            <img src="assets/img/kp2/utama.jpg" alt="Dashboard Admin">
-                            <div class="gallery-overlay">
-                                <div class="overlay-title">Dashboard Admin</div>
-                                <div class="overlay-description">Menampilkan data-data seperti jumlah user, statistik bulanan, dan navigasi</div>
-                            </div>
-                        </div>
-                        <div class="gallery-item" onclick="openModal('assets/img/kp2/guru.jpg', 'List Guru', 'List Guru SMK KP 2 yang lengkap beserta identitas nya')">
-                            <img src="assets/img/kp2/guru.jpg" alt="List Guru">
-                            <div class="gallery-overlay">
-                                <div class="overlay-title">List Guru</div>
-                                <div class="overlay-description">List Guru SMK KP 2 yang lengkap beserta identitas nya</div>
-                            </div>
-                        </div>
-                        <div class="gallery-item" onclick="openModal('assets/img/kp2/gamasuk.jpg', 'Guru Tidak Masuk', 'Menampilkan info guru piket yang tidak masuk')">
-                            <img src="assets/img/kp2/gamasuk.jpg" alt="Guru Tidak Masuk">
-                            <div class="gallery-overlay">
-                                <div class="overlay-title">Guru Tidak Masuk</div>
-                                <div class="overlay-description">Menampilkan info guru piket yang tidak masuk</div>
-                            </div>
-                        </div>
-                        <div class="gallery-item" onclick="openModal('assets/img/kp2/terlambat.jpg', 'Guru Terlambat', 'Menampilkan info guru piket yang datang terlambat')">
-                            <img src="assets/img/kp2/terlambat.jpg" alt="Guru Terlambat">
-                            <div class="gallery-overlay">
-                                <div class="overlay-title">Guru Terlambat</div>
-                                <div class="overlay-description">Menampilkan info guru piket yang datang terlambat</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-features">
-                        <div class="features-title">Fitur Utama:</div>
-                        <div class="features-list">
-                            <div class="feature-item">Manajemen jadwal piket</div>
-                            <div class="feature-item">Tracking kehadiran real-time</div>
-                            <div class="feature-item">Data guru lengkap</div>
-                            <div class="feature-item">Laporan keterlambatan</div>
-                            <div class="feature-item">Dashboard analytics</div>
-                            <div class="feature-item">Export data ke Excel</div>
-                        </div>
-                    </div>
-
-                    <div class="project-actions">
-                        <a href="#" class="btn btn-primary">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                            </svg>
-                            View Code
-                        </a>
-                        <a href="#" class="btn btn-secondary">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"/>
-                            </svg>
-                            Live Demo
-                        </a>
-                    </div>
-                </article>
-
-                <!-- Project 3: Sistem PBB -->
-                <article class="project fade-in" data-category="web system">
-                    <div class="project-number">03</div>
-                    <div class="project-header">
-                        <h3 class="project-title">Sistem Pengelolaan Berita Acara Pajak Bumi dan Bangunan</h3>
-                        <p class="project-description">
-                            Sistem informasi untuk mengelola berita acara pajak bumi dan bangunan (PBB). 
-                            Aplikasi ini membantu dalam pengelolaan data PBB, tracking pembayaran, 
-                            dan menghasilkan berita acara secara otomatis.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                            <span class="tech-tag">PHP</span>
-                            <span class="tech-tag">MySQL</span>
-                            <span class="tech-tag">PDF Generator</span>
-                        </div>
-                    </div>
-                    
-                    <div class="project-gallery">
-                        <div class="gallery-item" onclick="openModal('assets/img/bapen/utaama.png', 'Menu Utama', 'Tampilan utama informasi total pbb, status dan statistik pembayaran')">
-                            <img src="assets/img/bapen/utaama.png" alt="Menu Utama">
-                            <div class="gallery-overlay">
-                                <div class="overlay-title">Menu Utama</div>
-                                <div class="overlay-description">Tampilan utama informasi total pbb, status dan statistik pembayaran</div>
-                            </div>
-                        </div>
-                        <div class="gallery-item" onclick="openModal('assets/img/bapen/pbb.png', 'Data PBB', 'List data pajak bumi bangunan lengkap beserta status, lokasi dan informasi lainnya')">
-                            <img src="assets/img/bapen/pbb.png" alt="Data PBB">
-                            <div class="gallery-overlay">
-                                <div class="overlay-title">Data PBB</div>
-                                <div class="overlay-description">List data pajak bumi bangunan lengkap beserta status, lokasi dan informasi lainnya</div>
-                            </div>
-                        </div>
-                        <div class="gallery-item" onclick="openModal('assets/img/bapen/hutang.png', 'Data Hutang', 'Informasi nominal hutang wajib pajak dan jatuh tempo, serta status pembayaran')">
-                            <img src="assets/img/bapen/hutang.png" alt="Data Hutang">
-                            <div class="gallery-overlay">
-                                <div class="overlay-title">Data Hutang</div>
-                                <div class="overlay-description">Informasi nominal hutang wajib pajak dan jatuh tempo, serta status pembayaran</div>
-                            </div>
-                        </div>
-                        <div class="gallery-item" onclick="openModal('assets/img/bapen/arsip.png', 'Arsip Berita Acara', 'Informasi Arsip Berita Acara yang sudah di cetak pdf atau di print oleh user')">
-                            <img src="assets/img/bapen/arsip.png" alt="Arsip Berita Acara">
-                            <div class="gallery-overlay">
-                                <div class="overlay-title">Arsip Berita Acara</div>
-                                <div class="overlay-description">Informasi Arsip Berita Acara yang sudah di cetak pdf atau di print oleh user</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="project-features">
-                        <div class="features-title">Fitur Utama:</div>
-                        <div class="features-list">
-                            <div class="feature-item">Manajemen data PBB</div>
-                            <div class="feature-item">Tracking pembayaran pajak</div>
-                            <div class="feature-item">Generate berita acara PDF</div>
-                            <div class="feature-item">Sistem arsip digital</div>
-                            <div class="feature-item">Laporan hutang pajak</div>
-                            <div class="feature-item">Dashboard statistik</div>
-                        </div>
-                    </div>
-
-                    <div class="project-actions">
-                        <a href="#" class="btn btn-primary">
-                            <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333
+</html>
