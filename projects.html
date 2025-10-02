@@ -237,10 +237,11 @@
             letter-spacing: 1px;
         }
 
+
         /* Projects Grid */
         .projects-grid {
             display: grid;
-            gap: 3rem;
+            gap: 4rem;
             margin-bottom: 4rem;
         }
 
@@ -742,7 +743,7 @@
                   
                 </article>
 
-                <br>
+          
                 <article class="project fade-in" data-category="web system">
     <div class="project-number">02</div>
     <div class="project-header">
@@ -809,7 +810,7 @@
 </article>
 
 
-<br>
+
 <article class="project fade-in" data-category="web system">
     <div class="project-number">03</div>
     <div class="project-header">
@@ -875,7 +876,7 @@
     </div>
 </article>
 
-<br>
+
 <article class="project fade-in" data-category="web system">
     <div class="project-number">04</div>
     <div class="project-header">
@@ -970,10 +971,7 @@
     </div>
 </article>
 
-<br>
-<br>
-<br>
-<br>
+
 <article class="project fade-in" data-category="web system">
     <div class="project-number">05</div>
     <div class="project-header">
@@ -1048,10 +1046,6 @@
 </article>
 
 
-<br>
-<br>
-<br>
-<br>
 
 <article class="project fade-in" data-category="web system">
     <div class="project-number">06</div>
@@ -1141,13 +1135,6 @@
 </article>
 
 
-<br>
-
-
-<br>
-<br>
-<br>
-<br>
 <article class="project fade-in" data-category="web system">
     <div class="project-number">07</div>
     <div class="project-header">
@@ -1234,9 +1221,7 @@
     </div>
 </article>
 
-<br>
-<br>
-<br>
+
 <article class="project fade-in" data-category="web system">
     <div class="project-number">03</div>
     <div class="project-header">
@@ -1483,15 +1468,8 @@ mobileMenu.addEventListener('click', () => {
         });
 
         // Add parallax effect to project cards
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const projects = document.querySelectorAll('.project');
-            
-            projects.forEach((project, index) => {
-                const rate = scrolled * -0.5;
-                project.style.transform = `translateY(${rate * 0.1 * (index + 1)}px)`;
-            });
-        });
+   
+   
     </script>
 </body>
 </html>
