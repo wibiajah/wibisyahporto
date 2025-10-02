@@ -85,6 +85,20 @@
             color: var(--primary);
         }
 
+.mobile-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger {
+            width: 25px;
+            height: 3px;
+            background: var(--white);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
         .nav-link::after {
             content: '';
             position: absolute;
@@ -553,10 +567,27 @@
                 font-size: 2rem;
             }
 
-            .nav-menu {
-                display: none;
-            }
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--dark);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 2rem;
+        transition: left 0.3s ease;
+    }
 
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .mobile-menu {
+        display: flex;
+    }
             .stats-section {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -599,6 +630,11 @@
                 <li><a href="skills.html" class="nav-link">Skills</a></li>
                 <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
+             <div class="mobile-menu">
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+                <div class="hamburger"></div>
+            </div>
         </div>
     </nav>
 
@@ -1198,6 +1234,74 @@
     </div>
 </article>
 
+<br>
+<br>
+<br>
+<article class="project fade-in" data-category="web system">
+    <div class="project-number">03</div>
+    <div class="project-header">
+        <h3 class="project-title">Sistem Informasi Manajemen Stok Sembako Berbasis Web</h3>
+        <p class="project-description">
+            Sistem informasi berbasis web untuk mengelola stok sembako di Toko Rama Berkah. 
+            Aplikasi ini memungkinkan pencatatan barang masuk dan keluar secara otomatis, 
+            pemantauan stok secara real-time, pengecekan ketersediaan barang, dan pembuatan laporan 
+            persediaan yang akurat untuk meningkatkan efisiensi operasional dan meminimalisir 
+            kesalahan pencatatan manual.
+        </p>
+        <div class="project-tech">
+            <span class="tech-tag">HTML</span>
+            <span class="tech-tag">CSS</span>
+            <span class="tech-tag">JavaScript</span>
+            <span class="tech-tag">PHP</span>
+            <span class="tech-tag">MySQL</span>
+            <span class="tech-tag">Bootstrap</span>
+        </div>
+    </div>
+    
+    <div class="project-gallery">
+        <div class="gallery-item" onclick="openModal('assets/img/sembako/dashbor.png', 'Dashboard Utama', 'Menampilkan statistik stok sembako dan ringkasan operasional toko secara real-time')">
+            <img src="assets/img/sembako/dashbor.png" alt="Dashboard Utama">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Dashboard Utama</div>
+                <div class="overlay-description">Menampilkan statistik stok sembako dan ringkasan operasional toko secara real-time</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/sembako/barang.png', 'Data Barang', 'Daftar barang sembako lengkap dengan kategori, jumlah stok, dan status ketersediaan')">
+            <img src="assets/img/sembako/barang.png" alt="Data Barang">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Data Barang</div>
+                <div class="overlay-description">Daftar barang sembako lengkap dengan kategori, jumlah stok, dan status ketersediaan</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/sembako/stokmasuk.png', 'Transaksi Stok', 'Fitur untuk mencatat barang masuk dan keluar secara otomatis dan terstruktur')">
+            <img src="assets/img/sembako/stokmasuk.png" alt="Transaksi Stok">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Transaksi Stok</div>
+                <div class="overlay-description">Fitur untuk mencatat barang masuk dan keluar secara otomatis dan terstruktur</div>
+            </div>
+        </div>
+        <div class="gallery-item" onclick="openModal('assets/img/sembako/histori.png', 'Laporan Stok', 'Rekapitulasi dan analisis persediaan barang untuk mendukung pengambilan keputusan')">
+            <img src="assets/img/sembako/histori.png" alt="Laporan Stok">
+            <div class="gallery-overlay">
+                <div class="overlay-title">Laporan Stok</div>
+                <div class="overlay-description">Rekapitulasi dan analisis persediaan barang untuk mendukung pengambilan keputusan</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="project-features">
+        <div class="features-title">Fitur Utama:</div>
+        <div class="features-list">
+            <div class="feature-item">Dashboard real-time</div>
+            <div class="feature-item">Manajemen data barang</div>
+            <div class="feature-item">Pencatatan stok masuk/keluar</div>
+            <div class="feature-item">Monitoring stok otomatis</div>
+            <div class="feature-item">Laporan persediaan</div>
+            <div class="feature-item">Manajemen kategori sembako</div>
+        </div>
+    </div>
+</article>
+
             </section>
 
             
@@ -1237,6 +1341,7 @@
     </div>
 
     <script>
+        
         // Filter functionality
         const filterTabs = document.querySelectorAll('.filter-tab');
         const projects = document.querySelectorAll('.project');
@@ -1278,6 +1383,13 @@
         });
 
         // Modal functionality
+        const mobileMenu = document.querySelector('.mobile-menu');
+const navMenu = document.querySelector('.nav-menu');
+
+mobileMenu.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+}); 
         function openModal(src, title, description) {
             const modal = document.getElementById('imageModal');
             const modalImg = document.getElementById('modalImage');
